@@ -1,0 +1,89 @@
+.custom-select {
+  font-family: $ff-onest;
+
+  .choices__inner {
+    border: 1px solid $color-medium-grey-2;
+    border-radius: 10px;
+    background-color: $color-default-white;
+    padding: 17px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 15px;
+    color: $color-boulder;
+    outline: none;
+    transition: border $trans-default;
+
+    @include has-hover {
+      border-color: $color-main-blue;
+    }
+  }
+
+  .choices__list--single .choices__item {
+    color: $color-font;
+  }
+
+
+  .choices__list--single .choices__item.choices__placeholder {
+    opacity: 1;
+    color: $color-boulder;
+  }
+
+  .choices.is-open {
+    .choices__inner {
+      border-color: $color-main-blue;
+    }
+  }
+
+  .choices[data-type*="select-one"] .choices__inner {
+    padding-bottom: 17px;
+  }
+
+  .choices[data-type*="select-one"]::after {
+    border: none;
+    height: 8px;
+    width: 11px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L4 4.5L7 1.5" stroke="%23202326" stroke-width="1.5"/></svg>');
+    background-size: cover;
+    transition: transform $trans-default;
+  }
+
+  .choices[data-type*="select-one"].is-open::after {
+    margin-top: -2.5px;
+    transform: rotate(180deg);
+  }
+
+  .choices__list--single {
+    padding: 0;
+  }
+
+  .choices__list--dropdown {
+    margin-top: 5px;
+    border-radius: 6px;
+    background: $color-default-white;
+    box-shadow: 0 8px 60px 0 rgba($color-default-black, 0.07);
+
+    .choices__placeholder {
+      display: none;
+    }
+
+    .choices__item {
+      font-family: $ff-onest;
+      font-size: 14px;
+      color: $color-font;
+      font-weight: 400;
+      line-height: normal;
+      padding: 14px 17px 14px 10px;
+      border-left: 7px solid transparent;
+      transition: border $trans-default, background-color $trans-default;
+
+      &::after {
+        display: none;
+      }
+
+      &.is-highlighted {
+        background-color: $color-light-grey;
+        border-color: $color-main-blue;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+mixin content(data)
+  .content
+    .container
+      if data.hr
+        hr
+      h4.title.title--h4!=data.title
+      if data.blockqoute
+        figure
+          blockqoute!=data.blockqoute.text
+          figcaption!=data.blockqoute.author
+
+      if data.textBlock
+        p!=data.textBlock.text
+

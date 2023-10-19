@@ -1,0 +1,21 @@
+mixin custom-textarea(options = {})
+  -
+    const inputLabel = options.inputLabel ? options.inputLabel : false
+    const inputPlaceholder = options.inputPlaceholder ? options.inputPlaceholder : false
+    const inputId = options.inputId ? options.inputId : false
+    const inputName = options.inputName ? options.inputName : false
+    const inputValue = options.inputValue ? options.inputValue : false
+    const inputMinLength = options.inputMinLength ? options.inputMinLength : false
+    const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
+    const isHiddenLabel = options.isHiddenLabel ? options.isHiddenLabel : false
+    const inputMessage = options.inputMessage ? options.inputMessage : false
+    const isRequired = options.isRequired ? options.isRequired : false
+    const isDisabled = options.isDisabled ? options.isDisabled : false
+
+  .custom-textarea&attributes(attributes)
+    label
+      textarea(id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, disabled=isDisabled).thin-scrollbar
+      if inputLabel
+        span.custom-textarea__label(class=isHiddenLabel ? "visually-hidden" : null)!=inputLabel
+    if inputMessage
+      .custom-textarea__message!=inputMessage

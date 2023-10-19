@@ -1,0 +1,97 @@
+.rating {
+  $root: &;
+
+  &__title {
+    @include reset-block;
+    margin-bottom: 9px;
+    font-size: 11px;
+    color: $color-font;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.22px;
+    text-transform: uppercase;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .icon {
+    transition: all $trans-default;
+    margin-right: 4px;
+    fill: $color-selective-yellow;
+  }
+
+  input:checked + label ~ label .icon {
+    fill: $color-mischka;
+  }
+
+  input:checked ~ label .icon {
+    fill: $color-selective-yellow;
+    animation: blink-100 1s ease-in-out;
+  }
+
+  input:hover + label .icon {
+    transform: scale(1.25);
+  }
+
+  &__number {
+    @include reset-block;
+    position: relative;
+    width: 18px;
+    height: 36px;
+    margin-right: 8px;
+    order: -1;
+
+    &::after {
+      content: "0";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 36px;
+      color: $color-font;
+      transition: all $trans-default;
+    }
+  }
+
+  input:first-of-type:checked ~ #{$root}__number:after {
+    content: "1";
+  }
+
+  input:nth-of-type(2):checked ~ #{$root}__number:after {
+    content: "2";
+  }
+
+  input:nth-of-type(3):checked ~ #{$root}__number:after {
+    content: "3";
+  }
+
+  input:nth-of-type(4):checked ~ #{$root}__number:after {
+    content: "4";
+  }
+
+  input:nth-of-type(5):checked ~ #{$root}__number:after {
+    content: "5";
+  }
+}
+
+@keyframes blink-100 {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(2.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

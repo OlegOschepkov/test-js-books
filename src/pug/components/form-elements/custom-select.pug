@@ -1,0 +1,16 @@
+mixin custom-select(options = {})
+  -
+    const inputName = options.inputName ? options.inputName : false
+    const inputLabel = options.inputLabel ? options.inputLabel : false
+    const inputSize = options.size ? options.size : false
+    const isMultiple = options.isMultiple ? options.isMultiple : false
+    const isDisable = options.isDisable ? options.isDisable : false
+    const isRequired = options.isRequired ? options.isRequired : false
+    const isAutofocus = options.isAutofocus ? options.isAutofocus : false
+    const optionsArray = options.optionsArray ? options.optionsArray : false
+
+  .custom-select&attributes(attributes)
+    select(multiple=isMultiple, size=inputSize, name=inputName, disabled=isDisable, required=isRequired, autofocus=isAutofocus)
+      if optionsArray
+        each el in optionsArray
+          option(value=el.value)!=el.text

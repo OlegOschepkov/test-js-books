@@ -1,0 +1,144 @@
+.header {
+  $root: &;
+  padding: 18px 0;
+
+  @include vp-767 {
+    background-color: $color-athens-grey;
+    width: 100%;
+    padding: 9px 0;
+    top: 0;
+    position: fixed;
+    z-index: 90;
+  }
+
+  .logo {
+    margin-right: auto;
+
+    @include has-hover {
+      box-shadow: none;
+      transform: scale(1.1);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @include vp-767 {
+      position: relative;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 33px;
+
+    @include vp-767 {
+      width: calc(100% + 40px);
+      background-color: $color-athens-grey;
+      padding: 20px;
+      position: absolute;
+      left: -20px;
+      top: 40px;
+      display: flex;
+      flex-direction: column;
+      -webkit-overflow-scrolling: touch;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $trans-default, visibility $trans-default;
+      box-shadow: 0 13px 6px 0 rgba($color-default-black, 0.4);
+      align-items: flex-start;
+
+      &.is-active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &__link {
+    @include reset-block;
+    appearance: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: $color-font;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    transition: color $trans-default;
+
+    @include has-hover {
+      box-shadow: none;
+      color: $color-main-blue;
+    }
+
+    .icon {
+      fill: transparent;
+      margin-left: 5px;
+      transition: transform $trans-default;
+    }
+
+    &.is-active {
+      color: $color-main-blue;
+
+      .icon {
+        transform: rotate(180deg);
+      }
+
+      @include vp-767 {
+        + #{$root}__list {
+          position: relative;
+        }
+      }
+    }
+  }
+
+  &__list {
+    @include reset-block;
+    list-style: none;
+    width: 200px;
+    transition: opacity $trans-default;
+    border-radius: 6px;
+    background-color: $color-default-white;
+    gap: 6px;
+    padding: 9px 26px 9px 17px;
+    margin-top: 10px;
+
+    @include vp-767 {
+      width: calc(100vw - 40px);
+    }
+  }
+
+  &__sub-link {
+    @include reset-block;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: $color-font;
+    letter-spacing: 0.13px;
+    border: none;
+
+    @include has-hover {
+      box-shadow: none;
+      color: $color-main-blue;
+    }
+  }
+
+  .btn--basic {
+    margin-left: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+
+    @include vp-767 {
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+mixin banner(data)
+  .banner
+    .container
+      +picture-with-media({
+        path: data.img.path,
+        name: data.img.name,
+        nameMob: data.img.nameMob,
+        format: data.img.format,
+        width: data.img.width,
+        height: data.img.height,
+        altText: data.img.altText,
+      })
+      p.banner__description!=data.description

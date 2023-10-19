@@ -1,0 +1,24 @@
+extends ../components/base/layout
+
+block variables
+  -
+    const title = "Главная страница"
+    const hasHeader = true
+    const hasFooter = true
+    const currentUrl = ""
+    const currentPage = "main"
+
+block main
+  main
+    .books-page
+      h1.visually-hidden Главная страница
+      +hero(dataHero)
+      +content(dataBlockqoute)
+      +banner(dataBanner)
+      +content(dataConclusion)
+      +rate-this-article(dataRateThisArticle, dataRating)
+      +slider(dataSlider)
+
+block modals
+  +modal("modal--start-to-learn")(id="modal-start-to-learn")
+    +modal-start-to-learn(dataModalStartToLearn)

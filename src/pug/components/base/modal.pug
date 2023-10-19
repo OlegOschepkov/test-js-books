@@ -1,0 +1,6 @@
+mixin modal(mods)
+  .hystmodal(aria-hidden="true", class=mods)&attributes(attributes)
+    .hystmodal__wrap
+     .hystmodal__window(role="dialog", aria-modal="true")
+        +btn({text: "Закрыть", iconName: "icon-close", iconWidth, iconHeight}).hystmodal__close(data-hystclose)
+        block

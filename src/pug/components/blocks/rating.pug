@@ -1,0 +1,17 @@
+mixin rating(data)
+  .rating
+    if data.title
+      p.rating__title!=data.title
+    .rating__wrapper
+      each el in data.radio
+        +custom-radio({
+          inputId: el.inputId,
+          inputName: el.inputName,
+          inputValue: el.inputValue,
+          inputLabel: el.inputLabel,
+          iconName: el.iconName,
+          iconWidth: el.iconWidth,
+          iconHeight: el.iconHeight,
+          isChecked: el.isChecked,
+        })
+      p.rating__number

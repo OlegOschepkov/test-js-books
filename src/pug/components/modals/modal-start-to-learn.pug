@@ -1,0 +1,21 @@
+mixin modal-start-to-learn(data)
+    h4.title.title--h4!=data.title
+    p.hystmodal__form-title!=data.formTitle
+    form
+      each el in data.form
+        if el.textInput
+          +custom-input({
+            inputName: el.inputName,
+            inputLabel: el.inputLabel,
+            isRequired: el.isRequired,
+            inputId: el.inputId,
+            inputType: el.inputType,
+            inputPlaceholder: el.inputPlaceholder,
+            inputMinLength: el.inputMinLength,
+            inputMaxLength: el.inputMaxLength
+          })
+
+      +btn({text: data.submitTitle, type: "submit"}).btn--basic
+
+      p.hystmodal__acceptance!=data.acceptance
+

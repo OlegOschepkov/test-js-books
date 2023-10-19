@@ -1,0 +1,43 @@
+// Colors
+// ---------------------------------
+
+// Default
+
+$color-default-black:               #000000;
+$color-default-white:               #ffffff;
+$color-transparent:                 rgba(255, 255, 255, 0);
+
+// Project palette
+
+$color-athens-grey:                 #f8f8fa;
+$color-light-grey:                  #f1f1f3;
+$color-medium-grey:                 #ececf3;
+$color-medium-grey-2:               #ededf1;
+$color-mischka:                     #d7d7e2;
+$color-main-blue:                   #2d1aa7;
+$color-font:                        #202326;
+$color-boulder:                     #777777;
+$color-selective-yellow:            #ffb400;
+
+
+// Typography
+// ---------------------------------
+
+$ff-onest:                          "Onest", "Arial", sans-serif;
+
+// Animation
+// ---------------------------------
+
+$tf-default:                        ease;
+$trans-default:                     0.3s $tf-default;
+
+// Viewports
+// ---------------------------------
+
+$vp-768:                            768px;
+
+// Retina
+// ---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;

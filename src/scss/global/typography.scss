@@ -1,0 +1,59 @@
+.title {
+  margin: 0;
+  padding: 0;
+  color: $color-font;
+  font-family: $ff-onest;
+
+  &--h2 {
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 65px;
+    letter-spacing: -1.04px;
+
+    @include vp-767 {
+      font-size: 34px;
+      line-height: 38px;
+      letter-spacing: -0.68px;
+    }
+  }
+
+  &--h3 {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px;
+    letter-spacing: -0.8px;
+
+    @include vp-767 {
+      font-size: 28px;
+      line-height: 32px;
+      letter-spacing: -0.28px;
+    }
+  }
+
+  &--h4 {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: -0.56px;
+
+    @include vp-767 {
+      font-size: 22px;
+      line-height: 30px;
+      letter-spacing: -0.22px;
+    }
+  }
+}
+
+.link {
+  color: $color-main-blue;
+  opacity: 1;
+  transition: opacity $trans-default;
+  text-decoration: underline;
+
+  @include has-hover {
+    opacity: 0.75;
+  }
+}

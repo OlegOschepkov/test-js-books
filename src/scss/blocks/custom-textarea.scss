@@ -1,0 +1,58 @@
+.custom-textarea {
+  $root: &;
+  width: 100%;
+
+  label {
+    position: relative;
+    display: flex;
+  }
+
+  &__label {
+    position: absolute;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 14px;
+    left: 15px;
+    top: 3px;
+    color: $color-boulder;
+    transition: all $trans-default;
+  }
+
+  textarea {
+    font-family: $ff-onest;
+    width: 100%;
+    border: 1px solid $color-medium-grey-2;
+    border-radius: 10px;
+    background-color: $color-default-white;
+    padding: 17px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 15px;
+    color: $color-font;
+    outline: none;
+    transition: border $trans-default;
+
+    @include has-hover {
+      border-color: $color-main-blue;
+    }
+
+    &:placeholder-shown + #{$root}__label {
+      left: 15px;
+      top: 17px;
+      font-size: 14px;
+      line-height: 15px;
+    }
+
+    &:focus + #{$root}__label {
+      font-size: 9px;
+      font-weight: 500;
+      line-height: 14px;
+      left: 15px;
+      top: 3px;
+    }
+
+    &:focus {
+      border-color: $color-main-blue;
+    }
+  }
+}

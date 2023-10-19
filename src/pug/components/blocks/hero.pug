@@ -1,0 +1,22 @@
+mixin hero(data)
+  .hero
+    .container
+      .hero__wrapper
+        h2.title.title--h2!=data.title
+        if data.img
+          .hero__img-block
+            .hero__img(data-simplebar-init)
+              +picture({
+                path: data.img.path,
+                name: data.img.name,
+                format: data.img.format,
+                width: data.img.width,
+                height: data.img.height,
+                altText: data.img.altText,
+              })
+            .hero__date-text
+              span.hero__date!=data.dateText.date
+              span.hero__text!=data.dateText.text
+
+        if data.description
+          p.hero__description!=data.description

@@ -1,0 +1,44 @@
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+@mixin has-hover {
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover:not(.focus-visible),
+    &.focus-visible:focus {
+      @content;
+    }
+  }
+}
+
+// Desktop first
+
+@mixin vp-767 {
+  @media (max-width: $vp-768 - 1) {
+    @content;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+}
+
+@mixin reset-block {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin pseudo {
+  content: "";
+  display: block;
+  position: absolute;
+}

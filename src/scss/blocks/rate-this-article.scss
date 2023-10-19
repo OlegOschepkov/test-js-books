@@ -1,0 +1,90 @@
+.rate-this-article {
+  background-color: $color-light-grey;
+  padding: 47px 0 88px;
+
+  @include vp-767 {
+    padding: 23px 0 48px;
+  }
+
+  .title--h3 {
+    margin-bottom: 30px;
+
+    @include vp-767 {
+      margin-bottom: 28px;
+    }
+  }
+
+  .rating {
+    margin-bottom: 41px;
+
+    @include vp-767 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form-title {
+    @include reset-block;
+    margin-bottom: 15px;
+    color: $color-font;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.22px;
+    text-transform: uppercase;
+  }
+
+  form {
+    fieldset {
+      @include reset-block;
+      border: none;
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+
+      @include vp-767 {
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+    }
+
+    legend {
+      @include visually-hidden;
+    }
+
+    .custom-input,
+    .custom-select {
+      width: 100%;
+      max-width: 33%;
+      margin-bottom: 11px;
+
+      @include vp-767 {
+        max-width: 100%;
+        margin-bottom: 0;
+      }
+    }
+
+    textarea {
+      height: 146px;
+
+      @include vp-767 {
+        height: 200px;
+      }
+    }
+
+    .custom-textarea {
+      margin-bottom: 22px;
+    }
+
+    [type="submit"] {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      padding: 15px 29px;
+
+      @include vp-767 {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

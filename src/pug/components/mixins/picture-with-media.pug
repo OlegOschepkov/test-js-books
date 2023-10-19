@@ -1,0 +1,14 @@
+mixin picture-with-media(options={})
+  -
+    const path = options.path;
+    const name = options.name;
+    const nameMob = options.nameMob;
+    const format = options.format;
+    const width = options.width;
+    const height = options.height;
+    const altText = options.altText;
+
+  picture(class!=attributes.class)
+    source(type='image/webp', media="(max-width: 767px)", srcset="img/" + path + "/" + nameMob + ".webp" + ", " + "img/" + path + "/" + nameMob + "@2x.webp" + " 2x")
+    source(type='image/webp', media="(min-width: 768px)", srcset="img/" + path + "/" + name + ".webp" + ", " + "img/" + path + "/" + name + "@2x.webp" + " 2x")
+    img(src="img/" + path + "/" + name + "." + format, srcset= "img/" + path + "/" + name + "@2x." + format + " 2x", width= width, height= height, alt= altText)

@@ -1,0 +1,13 @@
+mixin card(data)
+  a(href=data.href).card
+    .card__img
+      +picture({
+        path: data.img.path,
+        name: data.img.name,
+        format: data.img.format,
+        width: data.img.width,
+        height: data.img.height,
+        altText: data.img.altText,
+      })
+    p.card__date!=data.date
+    p.card__description!=data.description

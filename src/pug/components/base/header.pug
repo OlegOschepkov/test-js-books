@@ -1,0 +1,35 @@
+mixin header(currentUrl)
+  header.header
+    .container
+      .header__wrapper
+        if(currentUrl === "index.html")
+          span.logo
+            +icon({iconName: "icon-logo", iconWidth: 104, iconHeight: 15})
+        else
+          +btn({
+            href: "index.html",
+            iconName: "icon-logo",
+            iconWidth: 104,
+            iconHeight: 15
+          }).logo(aria-label="Переход на главную")
+        +btn({})(aria-label="Показать меню", data-show-menu).btn--show-menu
+        nav.header__nav(data-header-mobile-menu)
+          each item in dataHeader.menu
+            if item.submenu
+              .header__submenu(data-submenu)
+                +btn({
+                  text: item.title,
+                  iconName: "icon-arrow-down",
+                  iconHeight: 6,
+                  iconWidth: 8
+                }).header__link(data-submenu-btn)
+
+                ul.header__list(data-submenu-list)
+                  each el in item.submenu
+                    li.header__list-item
+                      +btn({href: el.href, text: el.text}).header__sub-link
+
+            else
+              +btn({href: item.link, text: item.title}).header__link
+
+          +btn({text: dataHeader.startBtn.title})(data-hystmodal="#modal-start-to-learn").btn--basic

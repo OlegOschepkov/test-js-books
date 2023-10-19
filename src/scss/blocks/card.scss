@@ -1,0 +1,49 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 226px;
+
+  @include has-hover {
+    img {
+      transform: scale(1.25);
+    }
+  }
+
+  @include vp-767 {
+    width: 280px;
+  }
+
+  &__img {
+    border-radius: 18px;
+    margin-bottom: 12px;
+    overflow: hidden;
+
+    img {
+      width: 226px;
+      transition: transform $trans-default;
+
+      @include vp-767 {
+        width: 280px;
+      }
+    }
+  }
+
+  &__date {
+    @include reset-block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    color: $color-boulder;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.24px;
+  }
+
+  &__description {
+    @include reset-block;
+    padding-right: 15px;
+    font-size: 16px;
+    color: $color-font;
+    font-weight: 500;
+    line-height: 22px;
+  }
+}

@@ -1,0 +1,112 @@
+.hero {
+  $root: &;
+  padding-bottom: 55px;
+
+  @include vp-767 {
+    padding-bottom: 10px;
+  }
+
+  .title--h2 {
+    margin-bottom: 29px;
+
+    @include vp-767 {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img-block {
+    position: relative;
+
+    @include vp-767 {
+      order: 10;
+    }
+  }
+
+  &__img {
+    img {
+      min-height: 330px;
+
+      @include vp-767 {
+        max-width: unset;
+      }
+    }
+
+    &::after {
+      @include pseudo;
+      bottom: 0;
+      left: 77px;
+      width: 7px;
+      height: 5px;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $color-athens-grey;
+    }
+
+    @include vp-767 {
+      overflow: auto;
+      padding-bottom: 21px;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__date-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 25px 27px;
+    border-radius: 18px;
+    background-color: rgba($color-default-white, 0.9);
+  }
+
+  &__date {
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 25px;
+    color: $color-font;
+
+    &::after {
+      @include pseudo;
+      top: 50%;
+      right: -15px;
+      transform: translateY(-50%);
+      width: 7px;
+      height: 5px;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid $color-font;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    color: $color-font;
+  }
+
+  &__description {
+    @include reset-block;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: $color-font;
+
+    @include vp-767 {
+      margin-top: 0;
+      margin-bottom: 21px;
+    }
+  }
+}

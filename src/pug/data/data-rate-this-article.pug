@@ -1,0 +1,76 @@
+-
+  const dataRateThisArticle = {
+    title: "Что вы&nbsp;думаете об&nbsp;этой книге?",
+    rating: 4,
+    formTitle: "Добавить комментарий к&nbsp;книге",
+    submitTitle: "Отправить",
+    form: [
+      {
+        legend: "Данные о книге и читателе",
+        fieldset: [
+          {
+            textInput: true,
+            inputName: "data[input-name]",
+            inputLabel: "Имя",
+            isRequired: true,
+            inputId: "input-name",
+            inputType: "text",
+            inputPlaceholder: " ", // for easy input styling without scripts
+            inputMinLength: 2,
+            inputMaxLength: 255
+          },
+          {
+            textInput: true,
+            inputName: "data[input-email]",
+            inputLabel: "Email",
+            isRequired: true,
+            inputId: "input-email",
+            inputType: "email",
+            inputPlaceholder: " ", // for easy input styling without scripts
+            inputMinLength: 2,
+            inputMaxLength: 255
+          },
+          {
+            select: true,
+            inputName: "data[choose-book]",
+            inputLabel: "Выберите книгу",
+            isRequired: true,
+            inputId: "choose-book",
+            inputSize: 4,
+            optionsArray: [
+              {
+                value: "",
+                text: "Выберите книгу"
+              },
+              {
+                value: 0,
+                text: "JavaScript ниндзя"
+              },
+              {
+                value: 1,
+                text: "Pragmatic Guide to&nbsp;JavaScript"
+              },
+              {
+                value: 2,
+                text: "Pro JavaScript Techniques"
+              },
+              {
+                value: 3,
+                text: "Выразительный JavaScript"
+              }
+            ]
+          },
+        ]
+      },
+      {
+        textArea: true,
+        inputName: "data[feedback]",
+        inputLabel: "Ваш отзыв",
+        isRequired: true,
+        inputId: "input-feedback",
+        inputPlaceholder: " ", // for easy input styling without scripts
+        inputMinLength: 2,
+        inputMaxLength: 255
+      },
+    ]
+  }

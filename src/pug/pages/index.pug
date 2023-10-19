@@ -1,0 +1,73 @@
+extends ../components/base/layout
+
+block variables
+  -
+    const title = "Главная тестового задания"
+    const currentUrl = "index.html"
+    const pages = [
+      {
+        name: "Главная — main.html",
+        src: "main.html"
+      }
+    ]
+
+block main
+  style.
+    .container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .main-index .logo img {
+      height: 100%;
+      width: 300px;
+    }
+
+    h1 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    a {
+      color: #000000;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #416df4;
+    }
+
+    li {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 7px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      ol {
+        padding-left: 20px;
+      }
+
+      ol li {
+        margin-bottom: 15px;
+      }
+    }
+
+  main.container.main-index
+    h1 Список страниц
+    ol
+      each page in pages
+        li
+          a(href= page.src)= page.name

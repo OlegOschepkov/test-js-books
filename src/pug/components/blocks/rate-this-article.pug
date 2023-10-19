@@ -1,0 +1,46 @@
+mixin rate-this-article(data, dataRating)
+  .rate-this-article
+    .container
+      h3.title.title--h3!=data.title
+      +rating(dataRating)
+      p.rate-this-article__form-title!=data.formTitle
+      form
+        fieldset
+          each element in data.form
+            if element.legend
+              legend!=element.legend
+            if element.fieldset
+              each el in element.fieldset
+                if el.textInput
+                  +custom-input({
+                    inputName: el.inputName,
+                    inputLabel: el.inputLabel,
+                    isRequired: el.isRequired,
+                    inputId: el.inputId,
+                    inputType: el.inputType,
+                    inputPlaceholder: el.inputPlaceholder,
+                    inputMinLength: el.inputMinLength,
+                    inputMaxLength: el.inputMaxLength
+                  })
+                else if el.select
+                  +custom-select({
+                    inputName: el.inputName,
+                    inputLabel: el.inputLabel,
+                    isRequired: el.isRequired,
+                    inputId: el.inputId,
+                    inputSize: el.inputSize,
+                    optionsArray: el.optionsArray
+                  })(data-custom-select)
+        each el in data.form
+          if el.textArea
+            +custom-textarea({
+              inputName: el.inputName,
+              inputLabel: el.inputLabel,
+              isRequired: el.isRequired,
+              inputId: el.inputId,
+              inputPlaceholder: el.inputPlaceholder,
+              inputMinLength: el.inputMinLength,
+              inputMaxLength: el.inputMaxLength
+            })
+        +btn({text: data.submitTitle, type: "submit"}).btn--basic
+

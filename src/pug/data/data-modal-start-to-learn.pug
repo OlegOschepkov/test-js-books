@@ -1,0 +1,32 @@
+-
+  const dataModalStartToLearn = {
+    title: "Начать учиться",
+    rating: 4,
+    formTitle: "Оставьте заявку и&nbsp;наш менеджер вам перезвонит.",
+    submitTitle: "Отправить",
+    form: [
+      {
+        textInput: true,
+        inputName: "data[input-name-start-to-learn]",
+        inputLabel: "Как вас зовут",
+        isRequired: true,
+        inputId: "input-name-start-to-learn",
+        inputType: "text",
+        inputPlaceholder: " ", // for easy input styling without scripts
+        inputMinLength: 2,
+        inputMaxLength: 255
+      },
+      {
+        textInput: true,
+        inputName: "data[input-email-start-to-learn]",
+        inputLabel: "Ваш email",
+        isRequired: true,
+        inputId: "input-email-start-to-learn",
+        inputType: "email",
+        inputPlaceholder: " ", // for easy input styling without scripts
+        inputMinLength: 2,
+        inputMaxLength: 255
+      },
+    ],
+    acceptance: "Нажимая кнопку &laquo;Отправить&raquo;, вы&nbsp;соглашаетесь с&nbsp;<a class='link' href='#' rel='nofollow noopener noreferrer'>политикой конфиденциальности</a>"
+  }

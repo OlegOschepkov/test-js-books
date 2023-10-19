@@ -1,0 +1,18 @@
+mixin custom-radio(options = {})
+  -
+    const inputId = options.inputId ? options.inputId : false
+    const inputName = options.inputName ? options.inputName : false
+    const inputValue = options.inputValue ? options.inputValue : false
+    const inputLabel = options.inputLabel ? options.inputLabel : false
+    const iconName = options.iconName ? options.iconName : false
+    const iconWidth = options.iconWidth ? options.iconWidth : false
+    const iconHeight = options.iconHeight ? options.iconHeight : false
+    const isChecked = options.isChecked ? options.isChecked : false
+
+  input(type="radio", id=inputId, name=inputName, value=inputValue, checked=isChecked).visually-hidden
+  label(for=inputId).custom-radio__label
+    if iconName
+      +icon({iconName, iconWidth, iconHeight})
+      span.visually-hidden!=inputLabel
+    else
+      !=inputLabel

@@ -1,0 +1,15 @@
+.simplebar-scrollbar.simplebar-visible::before {
+  background-color: $color-main-blue;
+  opacity: 1;
+  top: 4px;
+}
+
+.simplebar-track.simplebar-horizontal::after {
+  @include pseudo;
+  width: 100%;
+  top: 4px;
+  height: 5px;
+  background-color: $color-medium-grey;
+  border-radius: 4px;
+  z-index: -1;
+}

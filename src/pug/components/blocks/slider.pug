@@ -1,0 +1,10 @@
+mixin slider(data)
+  .slider
+    .container
+      h3.title.title--h3!=data.title
+      .swiper(data-slider-similar-posts)
+        .swiper-wrapper
+          for el in data.slides
+            .swiper-slide
+              +card(el)
+        .swiper-pagination

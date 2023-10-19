@@ -1,0 +1,23 @@
+[data-submenu] {
+  position: relative;
+  overflow: visible;
+}
+
+[data-submenu-btn].is-active + [data-submenu-list] {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+[data-submenu-list] {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $trans-default, visibility $trans-default;
+}
