@@ -1865,7 +1865,7 @@ form textarea::-webkit-validation-bubble-message {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  .custom-input__label {
+  .custom-input .custom-input__label {
     position: absolute;
     font-size: 9px;
     font-weight: 500;
@@ -1913,7 +1913,7 @@ form textarea::-webkit-validation-bubble-message {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  .custom-textarea__label {
+  .custom-textarea .custom-textarea__label {
     position: absolute;
     font-size: 9px;
     font-weight: 500;
@@ -1929,7 +1929,7 @@ form textarea::-webkit-validation-bubble-message {
     border: 1px solid #ededf1;
     border-radius: 10px;
     background-color: #ffffff;
-    padding: 17px 15px;
+    padding: 15px;
     font-size: 14px;
     font-weight: 400;
     line-height: 15px;
