@@ -2743,7 +2743,9 @@ form textarea::-webkit-validation-bubble-message {
   .hystmodal__close .icon {
     fill: #202326;
     -webkit-transition: fill 0.3s ease;
-    transition: fill 0.3s ease; }
+    transition: fill 0.3s ease;
+    height: 22px;
+    width: 22px; }
   .hystmodal__close .btn__title {
     position: absolute;
     overflow: hidden;
